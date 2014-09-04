@@ -1,4 +1,4 @@
-<?php namespace Jux\Form;
+<?php namespace jux\form;
 
 use \Illuminate\Support\ServiceProvider;
 
