@@ -1,5 +1,5 @@
 <?php
-namespace jux\form\Facades;
+namespace Jux\Form\Facades;
 
 class FormBuild extends \Illuminate\Support\Facades\Facade {
 

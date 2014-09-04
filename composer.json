@@ -1,5 +1,5 @@
 {
-    "name": "Jux/Form",
+    "name": "jux/form",
     "description": "A little package to build form",
     "keywords": ["laravel","form","blade"],
     "license": "MIT",
