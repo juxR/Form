@@ -4,25 +4,38 @@ use \Illuminate\Support\ServiceProvider;
 
 class FormServiceProvider extends ServiceProvider{
 
-    protected $defer = true;
+    protected $defer = false;
 
-            /**
-             * Bootstrap the application events.
-             *
-             * @return void
-             */
-            public function boot()
-            {
-                $this->package('jux/form');
-            }
+    /**
+     * Bootstrap the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->package('jux/form');
+    }
 
-            public function register(){
 
-                $this->app->bindShared('FormBuild', function($app){
+    public function register(){
 
-               return new FormBuild( $app['form'] );
+        $this->app['jform'] = $this->app->share(function( $app ){
 
-           });
+                return new FormBuild;
 
-          }
-      }
+        });
+
+     /*   $this->app->bindShared('FormBuild', function($app){
+
+         return new FormBuild( $app['form'] );
+
+     });*/
+
+    }
+
+    public function provides(){
+
+        return array('jux');
+
+    }
+}
