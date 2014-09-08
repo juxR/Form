@@ -4,7 +4,7 @@ use \Illuminate\Support\ServiceProvider;
 
 class FormServiceProvider extends ServiceProvider{
 
-            protected $defer = true;
+    protected $defer = true;
 
             /**
              * Bootstrap the application events.
@@ -18,9 +18,11 @@ class FormServiceProvider extends ServiceProvider{
 
             public function register(){
 
-              $this->app->bindShared('formbuild', function($app){
-                 return new FormBuild($app['form']);
-             });
+                $this->app->bindShared('FormBuild', function($app){
+
+               return new FormBuild( $app['form'] );
+
+           });
 
           }
       }
